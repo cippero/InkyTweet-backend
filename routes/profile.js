@@ -54,7 +54,7 @@ router.delete('/:tweet_id', function (req, res){
 		    	user.save();
 			}
 		});
-	    res.send('deleted tweet #' + req.params.tweet_id); //change to db id instead of custom id
+	    res.send('deleted tweet #' + req.params.tweet_id);
     });
 });
 
