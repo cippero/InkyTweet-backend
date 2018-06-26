@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const tweetSchema = new mongoose.Schema({
-	tweet_id: String, //delete
+	// tweet_id: String, //delete
     creator: String,
     reserved: Boolean,
     body: String,

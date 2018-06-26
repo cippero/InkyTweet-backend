@@ -29,8 +29,8 @@ app.use(cors({
 
 app.use(expressSession({ 
 	secret: process.env.SESSION_SECRET
-	,resave: false //default is: true
-	,saveUninitialized: false //default is: true
+	,resave: false //default is true
+	,saveUninitialized: false //default is true
 	,cookie: {maxAge: 1000*60*60*24*7}
 }));
 
@@ -38,11 +38,11 @@ app.use(expressSession({
 app.use(passportConfig.initialize());
 app.use(passportConfig.session());
 
-// app.use(function(req, res, next){
-// 	res.locals.currentUser = req.user;
-// 	res.locals.alerts = req.flash();
-// 	next();
-// });
+app.use(function(req, res, next){
+	res.locals.currentUser = req.user;
+	// res.locals.alerts = req.flash();
+	next();
+});
 
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
